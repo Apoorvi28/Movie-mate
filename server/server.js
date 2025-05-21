@@ -39,7 +39,7 @@ app.post("/upload", upload.single("video"), (req, res) => {
     return res.status(400).json({ error: "No file uploaded" });
   }
 
-  const videoURL = `http://localhost:4000/uploads/${req.file.filename}`;
+  const videoURL = `https://movie-mate-nwh4.vercel.app/uploads/${req.file.filename}`;
   res.json({ videoURL });
 });
 
