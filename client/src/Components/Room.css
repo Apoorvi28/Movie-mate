@@ -1,0 +1,283 @@
+
+/* Reset and base styles */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* Container styles for the whole room */
+.room-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.video-section video {
+  width: 80%;
+  height: 80vh;
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.chat-section {
+  width: 400px;
+  max-width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Chat Box styles */
+.chat-box {
+  height: 60vh;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+/* Individual message style */
+.chat-message {
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .room-container {
+    flex-direction: column;
+  }
+
+  .chat-section {
+    width: 100%;
+    height: 40vh;
+    border-left: none;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Username input box */
+.username-box {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.username-input {
+  padding: 10px;
+  margin-top: 10px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.join-button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  gap: 20px;
+}
+
+.top-buttons button {
+  flex: 1;
+}
+
+.bottom-buttons {
+  margin-top: 10px;
+}
+
+.video-controls-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 720px;
+  margin: 10px auto 0;
+}
+
+
+.leave-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.message-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.message-input-container input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.send-button {
+  background-color: #28a745;
+  color: white;
+}
+
+input[type="text"]:focus, button:focus {
+  outline: none;
+}
+
+/* Genre-specific styles */
+
+.genre-horror {
+  background-color: #1c1c1c;
+  color: white;
+  background-image: url('/horror-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Creepster', cursive;
+}
+
+.genre-horror .chat-box {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid #e60000;
+  color: #e60000;
+}
+
+.genre-horror .chat-message {
+  background: rgba(255, 0, 0, 0.2);
+  border-left: 5px solid #e60000;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+
+.genre-romance {
+  background: linear-gradient(45deg, #ff8ca1, #ff5582);
+  color: white;
+  font-family: 'Dancing Script', cursive;
+}
+
+.genre-romance .chat-box {
+  background-color: rgba(255, 82, 130, 0.8);
+  border: 2px solid #ff5582;
+  color: white;
+}
+
+.genre-romance .chat-message {
+  background: rgba(255, 82, 130, 0.3);
+  border-left: 5px solid #ff5582;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+
+.genre-action {
+  background: linear-gradient(45deg, #000000, #ff5722);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.genre-action .chat-box {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid #ff5722;
+  color: white;
+}
+
+.genre-action .chat-message {
+  background: rgba(255, 87, 34, 0.2);
+  border-left: 5px solid #ff5722;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+
+.genre-comedy {
+  background: linear-gradient(45deg, #fbd800, #ff6d00);
+  color: black;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.genre-comedy .chat-box {
+  background-color: rgba(251, 216, 0, 0.8);
+  border: 2px solid #fbd800;
+  color: black;
+}
+
+.genre-comedy .chat-message {
+  background: rgba(251, 216, 0, 0.3);
+  border-left: 5px solid #fbd800;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+
+/* Emoji Picker */
+.emoji-picker {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  z-index: 2;
+  color: black;
+}
+.fullscreen-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fullscreen-button:hover {
+  background-color: #222;
+}
+.chat-section {
+  height: 100vh;
+  overflow-y: auto;
+}
+.chat-box {
+  height: calc(100vh - 150px); /* adjust based on header/input height */
+}
+
+.copy-room-link-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.copy-popup {
+  color: green;
+  margin-top: 5px;
+}
