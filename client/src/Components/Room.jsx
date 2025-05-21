@@ -14,7 +14,7 @@ function Room() {
   const emojiPickerRef = useRef(null);
   const emojiButtonRef = useRef(null);
   const copyTimeout = useRef(null);
-  const socket = useRef(io("http://localhost:4000")).current;
+  const socket = useRef(io("https://movie-mate-nwh4.vercel.app/")).current;
   const [username, setUsername] = useState("");
   const [isUsernameSet, setIsUsernameSet] = useState(false);
   const [genre, setGenre] = useState("");
@@ -46,7 +46,7 @@ function Room() {
     formData.append("video", file);
   
     try {
-      const res = await fetch("http://localhost:4000/upload", {
+      const res = await fetch("https://movie-mate-nwh4.vercel.app/upload", {
         method: "POST",
         body: formData,
       });

@@ -11,8 +11,9 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      
       // Send POST request to the backend API to authenticate the user
-      const response = await axios.post('http://localhost:4000/api/auth/login', { email, password });
+      const response = await axios.post('https://movie-mate-nwh4.vercel.app/api/auth/login', { email, password });
 
       // Save the JWT token to localStorage
       localStorage.setItem('token', response.data.token);

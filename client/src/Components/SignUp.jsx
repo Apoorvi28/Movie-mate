@@ -12,7 +12,7 @@ function SignUp() {
     e.preventDefault();
     try {
       // Send POST request to backend to create a new user
-      const response = await axios.post('http://localhost:4000/api/auth/signup', { email, password });
+      const response = await axios.post('https://movie-mate-nwh4.vercel.app/api/auth/signup', { email, password });
 
 
       // Store JWT token in localStorage
